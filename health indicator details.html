@@ -8,6 +8,12 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
+        /* Style for the highlighted indicator */
+        .highlight {
+            background-color: rgb(75, 94, 118); /* You can customize this */
+            padding: 5px;
+            border-radius: 4px;
+        }
       </style>
     </head>
 
@@ -282,8 +288,21 @@
   <p><strong>Data Source:</strong> Population census, household surveys</p>
   <hr>
 </section>
+    <script>
+  // Check if there's a hash in the URL
+  if (window.location.hash) {
+      const targetId = window.location.hash.substring(1); // Remove the '#' symbol
+      const targetElement = document.getElementById(targetId);
 
+      if (targetElement) {
+          // Highlight the targeted element
+          targetElement.classList.add('highlight');
+          
+          // Optional: Scroll to the targeted element
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+</script>
 
 </body>
-
 </html>
